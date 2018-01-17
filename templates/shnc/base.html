@@ -1,0 +1,72 @@
+<!DOCTYPE html
+{% load staticfiles %}
+<html>
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+<link href="https://fonts.googleapis.com/css?family=Spectral+SC" rel="stylesheet">
+<link rel="stylesheet" href="{% static 'css/app.css' %}">
+<meta name="viewport" content="initial-scale=1, maximum-scale=1">
+
+<head>
+	<title>SHNC</title>
+<body>
+
+
+    <div class="container">
+  <div id="logo">
+  
+        <img src="{% static 'images/res_logo.png' %} "></img>
+
+  </div>
+ {% if user.is_authenticated %}
+   <div id="logout_top" >
+      <a class="btn btn-dark" href="{% url 'user_logout' %}">
+          <span class="glyphicon glyphicon-log-out"></span> Log out
+      </a>
+  </div>
+ {% else %}
+   <li id="logout_top" >
+     <a class="navbar-link" href="{% url 'shnc:user_login' %}">Login</a>
+
+   </li>
+ {% endif %}
+  <nav class="navbar navbar-default">
+
+      <div class="navbar-header">
+         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-nav-demo" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span> 
+        </button>
+      </div>
+      <div class="collapse navbar-collapse" id="bs-nav-demo">
+        <ul class="nav navbar-nav">
+          <li><a href="{% url 'shnc:welcome' %}">HOME</a></li>
+          <li><a href="{% url 'shnc:lpn_list' %}">HR</a></li>
+          <li><a href="{% url 'shnc:admin_list' %}">ADMIN</a></li>
+          <li><a href="{% url 'shnc:bill_list' %}">BILLS</a></li> 
+          <li><a href="">FORMS</a></li>
+          <li><a href="">SUPPLIES</a></li>
+          <li><a href="">CONTACTS</a></li>
+        </ul>
+      </div>
+    
+  </nav>
+  </div>
+  
+  <div class="container">
+      
+    {% block body_block%}    
+    {% endblock %}
+  </div>
+  
+
+
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  <footer>
+   Copyright 2017 by <a href="http://scarlethaven.com/">Scarlet Haven Nursing Care</a>.
+  </footer>
+</body>
+</html>      

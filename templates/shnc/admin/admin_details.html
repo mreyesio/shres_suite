@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+{% extends "shnc/base.html" %}
+    <!-- page content -->
+    {% block body_block%}
+    {% load staticfiles %}
+     <div class="centerstage">
+        {{user.username}}
+        {{user.email}}
+
+        
+     </div>
+    <a href="{% url 'shnc:admin_list' %}"> Update Admin </a>
+    {% endblock %}

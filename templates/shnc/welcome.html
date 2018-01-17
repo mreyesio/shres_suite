@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+{% extends "shnc/base.html" %}
+    <!-- page content -->
+    {% block body_block%}
+    {% load staticfiles %}
+ <div>
+     <h1>Welcome</h1>
+ </div>
+ 
+ <div class="row" >
+    <div class="col-md-6"  style="margin-top:20px;">  
+    <div class="card ">
+      <a  href="{% url 'shnc:lpn_list' %}">
+          <span class="glyphicon glyphicon-flash"></span>Manage Nurses</a>
+          </div>
+    </div>  
+    <div class="col-md-6" style="margin-top:20px;"> 
+    <div class="card ">
+     <a  href="{% url 'shnc:admin_list' %}">
+          <span class="glyphicon glyphicon-flash"></span>Manage Admins</a>
+    </div>
+    </div>
+    <div class="col-md-6" style="margin-top:20px;">
+        <div class="card ">     
+      <a href="{% url 'shnc:bill_list' %}">
+          <span class="glyphicon glyphicon-flash"></span>Manage Bills</a>
+   </div>
+    </div>         
+    <div class="col-md-6" style="margin-top:20px;">   
+    <div class="card ">
+      <a  href="">
+          <span class="glyphicon glyphicon-flash"></span>Manage Forms</a>
+   </div>
+    </div>  
+
+
+</div>
+    {% endblock %}

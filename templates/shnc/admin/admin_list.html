@@ -1,0 +1,64 @@
+{% extends "shnc/base.html" %}
+    <!-- page content -->
+    {% block body_block%}
+    {% load staticfiles %}
+    {% load my_extras %}
+ <div>
+     <h1>Users</h1>
+ </div>
+ 
+     
+<div class="container" >
+    <ul class="list-group">
+    <li>
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <div class="panel-info">
+                    <p><strong>Name</strong></p>
+                </div>
+                <div class="panel-more1">
+                    <p><strong>Email</strong></p>
+                </div>
+                <div class="panel-more1">
+                    <p><strong>Role</strong></p>
+                </div>
+                <div class="panel-more1">
+                    <p><strong></strong></p>
+                </div>
+            </div>
+        </div>
+    </li>        
+    {% for user in users %}
+    <li>
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <div class="panel-info">
+                    <p><a href="{%url 'shnc:admin_details' pk=user.pk %}"> {{ user.username}} </a></p>
+                </div>
+                <div class="panel-more1">
+                    {{ user.email}}
+                </div>
+                <div class="panel-more1">
+                    
+                </div>
+                <div class="panel-more1">
+                    
+                </div>
+            </div>
+        </div>
+    </li>
+    {% endfor %}
+</ul>
+</div>
+<div class="row" >
+
+    <div class="col-md-6" style="margin-top:20px;"> 
+    <div class="card ">
+     <a  href="{% url 'shnc:add_user' %}">
+          <span class="glyphicon glyphicon-flash"></span>Add Admin</a>
+    </div>
+    </div>
+
+</div>
+
+    {% endblock %}

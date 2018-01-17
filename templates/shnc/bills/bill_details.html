@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+{% extends "shnc/base.html" %}
+    <!-- page content -->
+    {% block body_block%}
+    {% load staticfiles %}
+     <div class="centerstage">
+        <p>{{bill.agency}} {{bill.provider}} {{bill.date_due}}</p>
+        
+        
+    
+     </div>
+    <a href="{% url 'shnc:bills_list' %}"> Update bill </a>
+    {% endblock %}

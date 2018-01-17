@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+{% extends "shnc/base.html" %}
+    <!-- page content -->
+    {% block body_block%}
+    {% load staticfiles %}
+ <div>
+     <h1>Employees</h1>
+ </div>
+ 
+     
+<div class="container" >
+    <ul class="list-group">
+    <li>
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <div class="panel-info">
+                    <p><strong>Name</strong></p>
+                </div>
+                <div class="panel-more1">
+                    <p><strong>Email</strong></p>
+                </div>
+                <div class="panel-more1">
+                    <p><strong>License Expiration</strong></p>
+                </div>
+                <div class="panel-more1">
+                    <p><strong>CPR Expiration</strong></p>
+                </div>
+            </div>
+        </div>
+    </li>        
+    {% for lpn in lpns %}
+    <li>
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <div class="panel-info">
+                    <p><a href="{%url 'shnc:lpn_details' pk=lpn.pk %}"> {{ lpn.first_name}} {{ lpn.last_name}} </a></p>
+                </div>
+                <div class="panel-more1">
+                    {{ lpn.email}}
+                </div>
+                <div class="panel-more1">
+                    {{ lpn.license_exp}}
+                </div>
+                <div class="panel-more1">
+                    {{ lpn.cpr_exp}}
+                </div>
+            </div>
+        </div>
+    </li>
+    {% endfor %}
+</ul>
+</div>
+
+
+
+<div class="row"> 
+ <div class="col-md-6" style="margin-top:20px;"> 
+    <div class="card ">
+     <a  href="{% url 'shnc:lpn_new' %}">
+          <span class="glyphicon glyphicon-plus"></span> Add Nurse</a>
+    </div>
+    </div>
+</div>    
+
+    {% endblock %}

@@ -1,0 +1,101 @@
+#logo{
+	margin: 0 auto;
+	text-align: center;
+	margin-top: 10px;
+	margin-bottom: 5px;
+	max-height: 200px;
+}
+#logout_top {
+    text-align: right;
+    
+}
+.container{
+ width: 90%;
+}
+.navbar-default .navbar-nav>li>a{
+	/*color: black;*/
+	font-weight: bolder; 
+}
+.login_form{
+	margin: 0 auto;
+	text-align: center;	
+}
+.row_card{
+	margin-top: 50px;
+	margin-bottom: 70px;
+	padding-top:20px;
+	padding-bottom: 20px;
+	text-align: center;
+	font-size: large;
+	
+}
+.card{
+	max-width: 350px;
+	padding-top:50px;
+	padding-bottom:50px;
+	
+	background:#65191a;
+	/*margin-top: 50px;*/
+	/*margin-bottom: 50px;*/
+	text-align: center;
+	font-size: large;
+	margin:0 auto;
+	
+}
+.card>a{
+	padding:50px;
+	padding-left: 100px;
+	padding-right: 100px;
+	color: white;
+	font-weight: bolder; 
+}
+footer{
+	margin-top: 50px;
+	text-align: center;
+}
+body{
+	background: #eee;
+}
+
+/*HR form*/
+
+.new_form>p>label{
+	min-width:150px;
+
+}
+.new_form{
+
+	margin-left: 20%;
+	
+}
+/*Admin form*/
+.admin_form>p>label{
+	min-width:150px;
+
+}
+/*.admin_form>p>input{*/
+/*	display:none;*/
+/*}*/
+
+.admin_form{
+
+	margin-left: 20%;
+	
+}
+.list-group li {
+    list-style: none;
+}
+.panel{
+	margin-bottom: 5px;
+}
+.panel-info, .panel-more1 {
+    float: left;
+    margin: 0 10px;
+    min-width: 180px;
+}
+.panel-default{
+	max-height: 40px;
+}
+.panel-body{
+	padding:10px;
+}

@@ -1,0 +1,23 @@
+{% extends "shnc/base.html" %}
+    <!-- page content -->
+    {% block body_block%}
+    {% load staticfiles %}
+    {% load my_extras %}
+    <div class="row">
+        <img src="{% static 'images/shnc.png' %} "></img>
+    </div>>
+    <h1> Log In </h1>
+    <form action="{% url 'shnc:user_login' %}" method='POST'>
+        {% csrf_token %}
+        <label for="username">Username</label>
+        <input type="text" name="username" placeholder="Enter Username"/>
+        
+        <label for="password">Password</label>
+        <input type="password" name="password"/>
+        
+        <input type="submit" value="Login"/>
+        
+        
+    </form>
+   
+    {% endblock %}

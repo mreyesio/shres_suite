@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+{% extends "shnc/base.html" %}
+    <!-- page content -->
+    {% block body_block%}
+    {% load staticfiles %}
+ <div>
+     <h1>Bills</h1>
+ </div>
+ 
+<div class="container" >
+    <ul class="list-group">
+    <li>
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <div class="panel-info">
+                    <p><strong>Type</strong></p>
+                </div>
+                <div class="panel-more1">
+                    <p><strong>Provider</strong></p>
+                </div>
+                <div class="panel-more1">
+                    <p><strong>Amount</strong></p>
+                </div>
+                <div class="panel-more1">
+                    <p><strong>Due Date</strong></p>
+                </div>
+            </div>
+        </div>
+    </li>        
+    {% for bill in bills %}
+    <li>
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <div class="panel-info">
+                    <p><a href="{%url 'shnc:bill_details' pk=bill.pk  %}"> {{ bill.agency}} {{ bill.provider}} </a></p>
+                </div>
+                <div class="panel-more1">
+                    {{ bill.provider}}
+                </div>
+                <div class="panel-more1">
+                    ${{ bill.amount}}
+                </div>
+                <div class="panel-more1">
+                    {{ bill.date_due}}
+                </div>
+            </div>
+        </div>
+    </li>
+    {% endfor %}
+</ul>
+</div>
+ <div class="col-md-6" style="margin-top:20px;"> 
+    <div class="card ">
+     <a  href="{% url 'shnc:bill_new' %}">
+          <span class="glyphicon glyphicon-plus"></span> Add Bill</a>
+    </div>
+    </div>
+
+    {% endblock %}

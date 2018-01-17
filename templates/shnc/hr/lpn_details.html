@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+{% extends "shnc/base.html" %}
+    <!-- page content -->
+    {% block body_block%}
+    {% load staticfiles %}
+     <div class="centerstage">
+        {{lpn.first_name}}
+        {{lpn.last_name}}
+        {{lpn.phone_number}}
+        {{lpn.license_id}}
+        
+     </div>
+    <a href="{% url 'shnc:lpn_update' pk=lpn.pk %}"> Update LPN </a>
+    {% endblock %}

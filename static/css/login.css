@@ -1,0 +1,23 @@
+#logo{
+	margin: 0 auto;
+	text-align: center;
+	margin-top: 150px;
+	margin-bottom: 20px;
+}
+
+.container{
+ width: 90%;
+}
+
+.login_form{
+	margin: 0 auto;
+	text-align: center;	
+}
+
+footer{
+	margin-top: 50px;
+	text-align: center;
+}
+body{
+	background: #eee;
+}

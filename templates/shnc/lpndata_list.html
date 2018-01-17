@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+{% extends "shnc/base.html" %}
+    <!-- page content -->
+    {% block body_block%}
+    {% load staticfiles %}
+     <div class="centerstage">
+         {% for lpn in lpnData %}
+         <div class="lpns">
+             <h1><a href="{%url 'shnc:view_nurse' pk=lpnData.pk %}"> {{ lpnData.first_name}} {{ lpnData.last_name}} </a></h1>
+             
+         </div>>
+         {% endfor %}
+     </div>
+
+    {% endblock %}

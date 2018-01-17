@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+{% extends "shnc/base.html" %}
+    <!-- page content -->
+    {% block body_block%}
+    {% load staticfiles %}
+        <form method="POST" class="new_form"  autocomplete="off" role="presentation">
+            {% csrf_token %}
+           {{user_form.as_p}}
+           {{profile_form.as_p}}
+           
+           <input type="submit" class="btn btn-primary" value="Submit" />
+        </form>
+
+    {% endblock %}

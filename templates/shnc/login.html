@@ -1,0 +1,52 @@
+<!DOCTYPE html
+{% load staticfiles %}
+<html>
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+<link href="https://fonts.googleapis.com/css?family=Spectral+SC" rel="stylesheet">
+<link rel="stylesheet" href="{% static 'css/login.css' %}">
+<meta name="viewport" content="initial-scale=1, maximum-scale=1">
+
+<head>
+	<title>Scarlet Haven Nursing Care</title>
+<body>
+  
+  
+ <!--{% if user.is_authenticated %}-->
+ <!--  <li><a class="navbar-link" href="{% url 'user_logout' %}">Logout</a></li>-->
+ <!--{% else %}-->
+ <!--  <li><a class="navbar-link" href="{% url 'shnc:user_login' %}">Login</a></li>-->
+ <!--{% endif %}-->
+ 
+<div class="container">
+      <div id="logo">
+    <img src="{% static 'images/res_logo.png' %}" alt="SHNC"  />
+  </div>
+  <div class="login_form">
+    <h1> Log In </h1>
+    <form action="{% url 'shnc:user_login' %}" method='POST'>
+        {% csrf_token %}
+        <div>
+        <label for="username">Username</label>
+        <input type="text" name="username" placeholder="Enter Username"/>
+        </div>
+        <div>
+        <label for="password">Password</label>
+        <input type="password" name="password"/>
+        </div>
+        <input type="submit" value="Login"/>
+        
+        
+    </form>
+    </div>
+ </div>   
+
+
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+  <footer>
+   Copyright 2018 by <a href="http://scarlethavenres.com/">Scarlet Haven</a>.
+  </footer>
+</body>
+</html>
